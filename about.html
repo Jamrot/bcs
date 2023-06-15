@@ -5,47 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Source Code Summary</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <main>
-        <nav id="navbar">
+        <div id="navbar">
             <ul>
-                <li class="nav-logo"><a href="index.html">Source Code Summary</a></li>
-                <li><a href="about.html"><i class="fas fa-info-circle"></i> 模型介绍</a></li>
-                <li><a href="usage.html"><i class="fas fa-comments"></i> 模型使用</a></li>
-                <li><a href="contact.html"><i class="fas fa-envelope"></i> 联系我们</a></li>
+                <li class="nav-logo"><a href="index.html">Binary Code Summarization</a></li>
+                <li><a href="about.html"><i class="fas fa-info-circle"></i> CP-BCS</a></li>
+                <li><a href="usage.html"><i class="fas fa-code"></i> Visit CP-BCS</a></li>
+                <!-- <li><a href="contact.html"><i class="fas fa-envelope"></i> 联系我们</a></li> -->
             </ul>
-        </nav>
+        </div>
         <section id="about-content">
             <div class="content-wrapper">
-                <h1>关于 Source Code Summary</h1>
+                <h1>Control flow graph and Pseudo code guided<br>Binary Code Summarization (CP-BCS)</h1>
                 <div class="card">
-                    <h2>功能概述</h2>
-                    <p>Source Code Summary 是一个先进的语言生成模型，旨在帮助开发人员和其他人理解软件项目中的源代码。它提供了源代码的概要描述，包括功能、结构和设计等方面的信息。</p>
+                    <h2>About</h2>
+                    <p>Automatically generating function summaries for binaries is an extremely valuable but challenging task, as it involves considering the execution behavior and semantics of the low-level language (Assembly code) into human-readable natural language. However, most current work on understanding assembly code is oriented towards generating function names, which involve numerous abbreviations that make it still confusing to comprehend. To bridge this gap, we focus on generating complete summaries of binary functions, especially for stripped binary (no symbol table and debug information in reality).</p>
+                    <p>To fully exploit the semantics of assembly code, we present a Control flow graph and Pseudo code guided Binary Code Summarization (CP-BCS) framework. The framework utilizes a bidirectional instruction-level control flow graph and human knowledge contained pseudo code learns the comprehensive binary function execution behavior and semantics. We extensively evaluated CP-BCS on 3 different binary optimization levels (O1, O2, O3) for 3 different computer architectures (x86, x64, arm). The evaluation results demonstrate the superiority of CP-BCS and significantly improve the efficiently of reverse engineering.</p>
                 </div>
                 <div class="card">
-                    <h2>核心算法或逻辑</h2>
-                    <p>如果源代码涉及复杂的算法或逻辑，源代码摘要将简要概述这些部分的工作原理。这有助于读者快速了解代码的核心思想和关键细节。</p>
+                    <h2>Overflow</h2>
+                    <div id='about-img'><img src="images/architecture.jpg" style="display:inline-block;"></div>
                 </div>
                 <div class="card">
-                    <h2>模块和组件</h2>
-                    <p>Source Code Summary 的源代码由多个模块或组件组成。源代码摘要提供了这些模块或组件的名称和功能，以帮助读者了解代码的组织结构。</p>
+                    <h2>Case</h2>
+                    <div id='about-img'><img src="images/case.jpg" style="display:inline-block;"></div>
                 </div>
-                <div class="card">
-                    <h2>输入和输出</h2>
-                    <p>源代码摘要描述了代码的输入和输出。这包括输入参数的类型和用途，以及代码生成的输出结果。</p>
-                </div>
-                <div class="card">
-                    <h2>重要函数或类</h2>
-                    <p>源代码摘要列出了一些关键函数或类的名称和用途。这有助于读者快速定位代码中最重要的部分，并理解它们的作用。</p>
-                </div>
-                <div class="card">
-                    <h2>关键数据结构</h2>
-                    <p>如果代码使用了特定的数据结构，源代码摘要可以提到这些结构的名称和用途。这有助于读者了解代码的数据处理方式。</p>
-                </div>
-            </div>
         </section>
     </main>
     <script src="scripts.js"></script>

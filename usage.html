@@ -6,23 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Source Code Summary</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
     <main>
-        <nav id="navbar">
+        <div id="navbar">
             <ul>
-                <li class="nav-logo"><a href="index.html">Source Code Summary</a></li>
-                <li><a href="about.html"><i class="fas fa-info-circle"></i> 模型介绍</a></li>
-                <li><a href="usage.html"><i class="fas fa-comments"></i> 模型使用</a></li>
-                <li><a href="contact.html"><i class="fas fa-envelope"></i> 联系我们</a></li>
+                <li class="nav-logo"><a href="index.html">Binary Code Summarization</a></li>
+                <li><a href="about.html"><i class="fas fa-info-circle"></i> CP-BCS</a></li>
+                <li><a href="usage.html"><i class="fas fa-code"></i> Visit CP-BCS</a></li>
+                <!-- <li><a href="contact.html"><i class="fas fa-envelope"></i> 联系我们</a></li> -->
             </ul>
-        </nav>
+        </div>
 
         <div id="content-container">
-
             <div id="history-section">
                 <h3>History</h3>
                 <div id="history-list">
@@ -41,7 +40,7 @@
                     <div id="chat-box"></div>
                     <div id="chat-input-container">
                         <input id="chat-input" type="text" placeholder="Type your message...">
-                        <button id="send-button" onclick="sendMessage()">Send</button>
+                        <button id="send-button" onclick="sendMessage()">Summary</button>
                         <button id="clear-button" onclick="clearChat()">Clear</button>
                     </div>
                 </div>
@@ -50,10 +49,12 @@
             <div id="example-section">
                 <h3>Instructions & Example</h3>
                 <div id="usage-instructions">
-                    <p>该模型是一个源代码总结模型，利用函数代码进行总结任务。它可以接收输入一段函数代码，然后生成相应的总结内容。以下是使用该模型的步骤：<br>
-                        输入函数代码：将准备好的函数代码输入到模型中。可以通过将函数代码作为文本输入或将其传递给模型的API进行调用。<br>
-                        等待生成总结：模型会处理输入的函数代码，并生成相应的总结内容。等待一段时间，直到模型完成处理。<br>
-                        查看总结结果：一旦模型生成了总结内容，您可以查看结果并进行评估。模型的总结可能包括对函数的目的、输入参数、输出结果、核心逻辑或任何其他关键信息的概括。</p>
+                    <ul>
+                        <li>Select the system architecture: x86, x64, arm, MIPS.</li>
+                        <li>Input the binary code into the designated field.</li>
+                        <li>Click the "Summary" button to generate a summary based on the input.</li>
+                        <li>To clear the contents of the dialogue box, click the "Clear" button.</li>
+                    </ul>
                 </div>
                 
                 <h3>Example</h3>
@@ -68,7 +69,7 @@
         </div>
 
     </main>
-    <script src="scripts.js"></script>
+    <script src="js/scripts.js"></script>
 </body>
 
 </html>
