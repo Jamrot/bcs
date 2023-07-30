@@ -1,0 +1,554 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center; */
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+	padding: 0;
+    /* height: 100vh; */
+    /* background-color: #f4f4f4; */
+    background-image: url('images/code.jpg');
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* height: 100vh; */
+    margin-top: 50px;
+}
+img {
+    /* margin: 10px; */
+    padding: 30px;
+    height: 500px;
+}
+
+/* :root {
+	--r-globalnav-background-opened: #fbfbfd;
+	--r-globalnav-background-opened-dark: #161617
+} */
+
+
+/* Navbar */
+
+#navbar {
+    background-color: #0E402D;
+    width: 100%;
+    position: absolute;
+    top: 0;
+	right: 0;
+	left: 0;
+	z-index: 9999;
+	display: block;
+    margin: 0;
+	width: 100%;
+    height: 80px;
+	font-size: 17px;
+    text-align: center;
+}
+
+#navbar ul, #navbar ul li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex:1;
+    justify-content: space-around;
+    height: 100%; 
+    align-items: center; 
+}
+
+#navbar ul li a{
+    color: white;
+    text-decoration: none;
+    line-height: 80px;
+    flex: 1;
+    transition: background-color 0.3s ease;
+}
+
+#navbar ul li a:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* index.html */
+
+#header {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    height: 50vh;
+    align-content: center;
+    line-height: 80vh;
+    color: #ffffff;
+    /* text-shadow: -1px 1px 0 #000, 1px 1px 0 #000,1px -1px 0 #000,-1px -1px 0 #000; */
+}
+#index-container {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/code1.jpg') no-repeat 0% 20%/ cover;
+    width: 100vw;
+    height: 100vh;
+}
+#index-button {
+    font-size: 16px;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.1);
+    border-color: #ffffff;
+    border-width: 3px;
+    padding: 1em;
+    margin-left: 20%;
+    border-style:solid;
+}
+#index-button:hover{
+    color: #0E402D;
+    background-color: #ffffff;
+    border-color: #ffffff;
+    border-style:solid;
+}
+
+/* usage.html */
+/* Styles for the main content container */
+#content-container {
+    display: flex;
+    /* max-width: 1200px; */
+    margin: 0 auto;
+    padding: 0;
+    overflow-y: auto;
+    /* min-height: 600px; */
+    /* gap: 5px; */
+    text-align: center;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background-color: #f5f5f5;
+    height: calc(100vh - 80px);
+    /* height: 100vh; */
+}
+
+/* Styles for the history section */
+#history-section {
+    flex: 0;
+    background-color: #f9f9f9;
+    /* border-radius: 8px; */
+    margin: 0;
+    padding-top: 30px;
+    overflow-y: auto;
+    /* position: absolute;
+    left: 0%;
+    width: 30%; */
+    height: inherit;
+    /* background-color: #f5f5f5; */
+}
+
+#history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    justify-content: center;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+}
+
+#new-chat-button {
+    padding: 2ex;
+    background-color: #949494;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#new-chat-button:hover {
+    background-color: #484949;
+}
+
+/* Styles for the chatbot section */
+
+#chatbot-section {
+    flex: 3;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    padding: 20px;
+    overflow-y: auto;
+    /* position: absolute;
+    left: 0%;
+    width: 60%; */
+    
+    display: flex;
+    flex-direction: column;
+    /* max-height: inherit; */
+}
+
+#system-buttons {
+    /* flex: 1; */
+    justify-content: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    overflow: hidden; 
+    display: flex;
+}
+
+#system-buttons button {
+    flex: 1;
+    flex-grow: 1;
+    font-size: 14px;
+    padding: 1ex;
+    background-color: #f2f2f2;
+    color: #333;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s; 
+}
+
+#system-buttons button.selected {
+    background-color: #6929ff;
+    color: white;
+}
+
+#opt-buttons {
+    /* flex: 1; */
+    justify-content: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    overflow: hidden; 
+    display: flex;
+}
+
+#opt-buttons button {
+    flex: 1;
+    flex-grow: 1;
+    font-size: 14px;
+    padding: 1ex;
+    background-color: #f2f2f2;
+    color: #333;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s; 
+}
+
+#opt-buttons button.selected {
+    background-color: #6929ff;
+    color: white;
+}
+
+#chat-container {
+    /* flex: 2; */
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    margin: 0;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+#chat-box {
+    min-height: 300px;
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.message {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: left;
+}
+
+.user-message {
+    background-color: #e0e0e0;
+    align-self: flex-end;
+}
+
+.bot-message {
+    background-color: #6929ff;
+    color: white;
+}
+
+#chat-input-container {
+    display: flex;
+    border-top: 1px solid #ddd;
+    background-color: #f5f5f5;
+    margin-top: 10px;
+    padding: 10px 0px 0px;
+}
+
+#chat-input {
+    width: 80%;
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+#send-button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#send-button:hover {
+    background-color: #0e8331;
+}
+
+#clear-button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    background-color: rgb(228, 228, 228);
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#clear-button:hover {
+    background-color: #ff0000;
+    color: white;
+}
+
+/* Styles for the example section */
+#example-section {
+    flex: 1;
+    background-color: #f5f5f5;
+    /* border-radius: 8px; */
+    padding: 20px;
+    overflow-y: auto;
+    /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); */
+    /* position: absolute;
+    left: 60%;
+    width: 40%; */
+    /* margin-top: 10px; */
+    height: inherit;
+}
+
+#usage-instructions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    justify-content: center;
+    padding: 15px;
+    text-align: left;
+    font-size: 18px;
+    line-height: 1.5;
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+    /* margin-bottom: 20px; */
+    overflow-y: auto;
+}
+
+/* Styles for the example buttons */
+#example-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    justify-content: center;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+}
+
+#example-buttons button {
+    padding: 15px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+#example-buttons button:hover {
+    background-color: #555;
+}
+
+
+/* ... about.html ... */
+
+/* Use a modern font */
+
+.content-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    margin-top: 40px;
+    padding: 0 20px;
+    text-align: left;
+}
+
+/* Header section */
+#about-header {
+    /* background-color: #1E90FF; */
+    padding: 20px 0 15px 0; /* Modify this line */
+    text-align: center;
+    color: black;
+    margin-top: 120px; /* Modify this line */
+    padding-top: 160px; /* Add this line */
+}
+
+#about-header h1 {
+    font-size: 48px;
+    margin: 0;
+}
+
+/* Content section */
+#about-content {
+    background-color: #f8f8f8;
+    padding: 0px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    position: absolute;
+    top: 10%; 
+    left: 20px;
+    right: 20px;
+    margin-top: 20px; 
+}
+
+#about-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: left;
+}
+
+#about-img {
+    text-align:center;
+}
+
+/* Cards */
+.card {
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 4px;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.card h2 {
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.card p {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.card:hover {
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ... contact.html ... */
+
+/* Header section */
+main {
+    padding: 20px;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center; 
+}
+
+.contact-info {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+.contact-info strong {
+    font-weight: bold;
+}
+
+.contact-info a {
+    color: #1E90FF;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+@keyframes loading {
+    0%, 80%, 100% {
+      opacity: 0;
+    }
+    40% {
+      opacity: 1;
+    }
+  }
+  
+  .dots span {
+    animation-name: loading;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+  }
+  
+  .dots span:nth-child(2) {
+    animation-delay: 0.3s;
+  }
+  
+  .dots span:nth-child(3) {
+    animation-delay: 0.6s;
+  }
+  
+  .dots span:nth-child(4) {
+    animation-delay: 0.9s;
+  }
+  
+  .dots span:nth-child(5) {
+    animation-delay: 0.8s;
+  }
+  
+  .dots span:nth-child(6) {
+    animation-delay: 1s;
+  }
+
+  .dots span {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: large;
+    font-weight: bold;
+  }

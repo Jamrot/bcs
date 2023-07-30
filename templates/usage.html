@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Source Code Summary</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <main>
+        <div id="navbar">
+            <ul>
+                <li class="nav-logo"><a href="/">Binary Code Summarization</a></li>
+                <li><a href="/about"><i class="fas fa-info-circle"></i> CP-BCS</a></li>
+                <li><a href="/usage"><i class="fas fa-code"></i> Visit CP-BCS</a></li>
+                <!-- <li><a href="contact.html"><i class="fas fa-envelope"></i> 联系我们</a></li> -->
+            </ul>
+        </div>
+
+        <div id="content-container">
+            <div id="history-section">
+                <h3>History</h3>
+                <div id="history-list">
+                    <button id="new-chat-button">New</button>
+                </div>
+            </div>
+
+            <div id="chatbot-section">
+                <div id="system-buttons">
+                    <button>ARM_32</button>
+                    <button>X86_32</button>
+                    <button>X86_64</button>
+                    <!-- <button onclick="selectSystem('MIPS')">MIPS</button> -->
+                </div>
+                <div id="opt-buttons">
+                    <button>O1</button>
+                    <button>O2</button>
+                    <button>O3</button>
+                    <!-- <button onclick="selectSystem('MIPS')">MIPS</button> -->
+                </div>
+                <div id="chat-container">
+                    <div id="chat-box"></div>
+                    <div id="chat-input-container">
+                        <textarea id="chat-input" type="text" placeholder="Type your message..."></textarea>
+                        <button id="send-button" onclick="sendMessage()">Summary</button>
+                        <button id="clear-button" onclick="clearChat()">Clear</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="example-section">
+                <h3>Instructions & Example</h3>
+                <div id="usage-instructions">
+                    <ul>
+                        <li>Select the system architecture: x86, x64, arm, MIPS.</li>
+                        <li>Input the binary code into the designated field.</li>
+                        <li>Click the "Summary" button to generate a summary based on the input.</li>
+                        <li>To clear the contents of the dialogue box, click the "Clear" button.</li>
+                    </ul>
+                </div>
+                
+                <h3>Example</h3>
+                <div id="example-buttons">                    
+                    <button onclick="sendExample('push rbp\nmov rbp, rsp\npush rbx\nmov eax, [rdi+<POSITIVE>]\nmov rbx, rdi\ntest eax, eax\njz <NEAR>\nsub eax, <POSITIVE>\ntest eax, eax\nmov [rdi+<POSITIVE>], eax\njnz <NEAR>\nlea rdi, [rbx+<POSITIVE>]\ncall <ICALL>\nlea rax, [rbx+<POSITIVE>]\ncmp [rbx+<POSITIVE>], rax\njnz <NEAR>\nlea rax, [rbx+<POSITIVE>]\ncmp [rbx+<POSITIVE>], rax\njnz <NEAR>\nmov rdi, rbx\ncall <ICALL>\ncmp [rbx+<POSITIVE>], <ZERO>\njz <NEAR>\ncall <ICALL>\nmov rdi, [rbx+<POSITIVE>]\ncall <ICALL>\nmov rdi, rbx\ncall <ICALL>\npop rbx\npop rbp\nretn\ncall <ICALL>\npop rbx\npop rbp\nretn\nud2\nud2\nmov rsi, rdi\nxor eax, eax\nmov rdi, <OFFSET> aSvcDestroyNoTh\ncall <ICALL>\njmp <NEAR>')">Destroy an RPC service</button>
+                    <button onclick="sendExample('push rbp\nmov rbp, rsp\npush r14\npush r13\npush r12\npush rbx\nmov eax, [rdi+<POSITIVE>]\nlea rbx, [rax+rax*2]\nshl rbx, <POSITIVE>\nlea r12, [rbx+<NEGATIVE>]\ncmp qword ptr [r12], <ZERO>\njz <NEAR>\npop rbx\npop r12\npop r13\npop r14\npop rbp\nretn\nlea rsi, [rdi+<POSITIVE>]\nmov r13, rdi\nmov rdi, <OFFSET> aHugepages\ncall <ICALL>\ntest rax, rax\nmov rsi, rax\nmov [r12], rax\njz <NEAR>\nmovsxd rax, <MEM> cs:dword_FFFFFFFF81F00C10\nimul rax, , <POSITIVE>\nadd rax, <NEGATIVE>\ncmp rax, <OFFSET> qword_FFFFFFFF820CD160\njbe <NEAR>\nadd rbx, <NEGATIVE>\nmov r14, <OFFSET> qword_FFFFFFFF820CD160\njmp <NEAR>\nmovsxd rax, <MEM> cs:dword_FFFFFFFF81F00C10\nadd r14, <POSITIVE>\nimul rax, , <POSITIVE>\nadd rax, <NEGATIVE>\ncmp r14, rax\njnb <NEAR>\nmov rsi, [r12]\nmov rcx, <OFFSET> qword_FFFFFFFF81E4CBA0\nmov rdx, rbx\nmov rdi, r14\ncall <ICALL>\ntest eax, eax\njz <NEAR>\nmov edx, [r13+<POSITIVE>]\nlea rsi, [r14+<POSITIVE>]\nmov rdi, <OFFSET> unk_FFFFFFFF81BAE968\nxor eax, eax\ncall <ICALL>\nmov rdi, r13\ncall <ICALL>\njmp <NEAR>')">Register hstate attributes for a single node device</button>
+                    <button onclick="sendExample('sub rsp, <POSITIVE>\nmov edx, <POSITIVE>\nmov esi, <OFFSET> qword_624940\nmov edi, <OFFSET> qword_628940\ncall <ICALL>\ncmp eax, <POSITIVE>\njnz <NEAR>\nmov edx, <POSITIVE>\nmov esi, <OFFSET> qword_628980\nmov edi, <OFFSET> qword_62A9A0\ncall <ICALL>\ncmp eax, <POSITIVE>\njnz <NEAR>\ncall <ICALL>\nmov <MEM> cs:dword_61DEA8, eax\nadd rsp, <POSITIVE>\nretn\nmov edi, <POSITIVE>\ncall <ECALL> _exit')">initialize the terminal data structures</button>
+                </div>
+            </div>
+            
+
+        </div>
+
+    </main>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+
+</html>

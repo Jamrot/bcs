@@ -5,16 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Source Code Summary</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <main>
         <div id="navbar">
             <ul>
-                <li class="nav-logo"><a href="index.html">Binary Code Summarization</a></li>
-                <li><a href="about.html"><i class="fas fa-info-circle"></i> CP-BCS</a></li>
-                <li><a href="usage.html"><i class="fas fa-code"></i> Visit CP-BCS</a></li>
+                <li class="nav-logo"><a href="/">Binary Code Summarization</a></li>
+                <li><a href="/about"><i class="fas fa-info-circle"></i> CP-BCS</a></li>
+                <li><a href="/usage"><i class="fas fa-code"></i> Visit CP-BCS</a></li>
                 <!-- <li><a href="contact.html"><i class="fas fa-envelope"></i> 联系我们</a></li> -->
             </ul>
         </div>
@@ -28,14 +28,17 @@
                 </div>
                 <div class="card">
                     <h2>Overflow</h2>
-                    <div id='about-img'><img src="images/architecture.jpg" style="display:inline-block;"></div>
+                    <div id='about-img'><img src="{{ url_for('static', filename='images/architecture.jpg') }}" style="display:inline-block;"></div>
                 </div>
                 <div class="card">
                     <h2>Case</h2>
-                    <div id='about-img'><img src="images/case.jpg" style="display:inline-block;"></div>
+                    <h3 style="text-align: center;">Binary Code</h3>
+                    <div id='about-img'><img src="{{ url_for('static', filename='images/case.jpg') }}" style="display:inline-block;"></div>
+                    <h3 style="text-align: center;">CP-BCS Summary: </h3>
+                    <p style="text-align: center;">free all resources associated with context_handle.</p>
                 </div>
         </section>
     </main>
-    <script src="scripts.js"></script>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
 </body>
 </html>
