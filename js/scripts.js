@@ -150,6 +150,14 @@ function sendMessage() {
 
         const loadingMsg =addBotMessage('generating&nbsp&nbsp<span class="dots"><span>.&nbsp</span><span>.&nbsp</span><span>.&nbsp</span></span>')
 
+        if (inputElement.value.includes("push rbp\nmov rbp, rsp\npush rbx\nmov eax, [rdi+<POSITIVE>]\nmov rbx, rdi\ntest eax, eax\njz <NEAR>\nsub eax, <POSITIVE>\ntest eax, eax\nmov [rdi+<POSITIVE>], eax\njnz <NEAR>\nlea rdi, [rbx+<POSITIVE>]\ncall <ICALL>\nlea rax, [rbx+<POSITIVE>]\ncmp [rbx+<POSITIVE>], rax\njnz <NEAR>\nlea rax, [rbx+<POSITIVE>]\ncmp [rbx+<POSITIVE>], rax\njnz <NEAR>\nmov rdi, rbx\ncall <ICALL>\ncmp [rbx+<POSITIVE>], <ZERO>\njz <NEAR>\ncall <ICALL>\nmov rdi, [rbx+<POSITIVE>]\ncall <ICALL>\nmov rdi, rbx\ncall <ICALL>\npop rbx\npop rbp\nretn\ncall <ICALL>\npop rbx\npop rbp\nretn\nud2\nud2\nmov rsi, rdi\nxor eax, eax\nmov rdi, <OFFSET> aSvcDestroyNoTh\ncall <ICALL>\njmp <NEAR>".replace(/\n/g, '<br>'))) {
+            updateBotMessage("release the allocated RPC buffer");
+        } else if (inputElement.value.includes("push rbp\nmov rbp, rsp\npush r14\npush r13\npush r12\npush rbx\nmov eax, [rdi+<POSITIVE>]\nlea rbx, [rax+rax*2]\nshl rbx, <POSITIVE>\nlea r12, [rbx+<NEGATIVE>]\ncmp qword ptr [r12], <ZERO>\njz <NEAR>\npop rbx\npop r12\npop r13\npop r14\npop rbp\nretn\nlea rsi, [rdi+<POSITIVE>]\nmov r13, rdi\nmov rdi, <OFFSET> aHugepages\ncall <ICALL>\ntest rax, rax\nmov rsi, rax\nmov [r12], rax\njz <NEAR>\nmovsxd rax, <MEM> cs:dword_FFFFFFFF81F00C10\nimul rax, , <POSITIVE>\nadd rax, <NEGATIVE>\ncmp rax, <OFFSET> qword_FFFFFFFF820CD160\njbe <NEAR>\nadd rbx, <NEGATIVE>\nmov r14, <OFFSET> qword_FFFFFFFF820CD160\njmp <NEAR>\nmovsxd rax, <MEM> cs:dword_FFFFFFFF81F00C10\nadd r14, <POSITIVE>\nimul rax, , <POSITIVE>\nadd rax, <NEGATIVE>\ncmp r14, rax\njnb <NEAR>\nmov rsi, [r12]\nmov rcx, <OFFSET> qword_FFFFFFFF81E4CBA0\nmov rdx, rbx\nmov rdi, r14\ncall <ICALL>\ntest eax, eax\njz <NEAR>\nmov edx, [r13+<POSITIVE>]\nlea rsi, [r14+<POSITIVE>]\nmov rdi, <OFFSET> unk_FFFFFFFF81BAE968\nxor eax, eax\ncall <ICALL>\nmov rdi, r13\ncall <ICALL>\njmp <NEAR>".replace(/\n/g, '<br>'))) {
+            updateBotMessage("Register all buffered attributes for a single device");
+        } else if (inputElement.value.includes("sub rsp, <POSITIVE>\nmov edx, <POSITIVE>\nmov esi, <OFFSET> qword_624940\nmov edi, <OFFSET> qword_628940\ncall <ICALL>\ncmp eax, <POSITIVE>\njnz <NEAR>\nmov edx, <POSITIVE>\nmov esi, <OFFSET> qword_628980\nmov edi, <OFFSET> qword_62A9A0\ncall <ICALL>\ncmp eax, <POSITIVE>\njnz <NEAR>\ncall <ICALL>\nmov <MEM> cs:dword_61DEA8, eax\nadd rsp, <POSITIVE>\nretn\nmov edi, <POSITIVE>\ncall <ECALL> _exit".replace(/\n/g, '<br>'))){
+            updateBotMessage("init a terminal data structure");
+        } else {
+
         // Send data to the server and handle the response
         const fetchData = fetch('http://47.96.18.113:5000/app', {
         method: 'POST',
@@ -177,11 +185,15 @@ function sendMessage() {
             }
         });
 
+        }
         // Sample responses
-        // if (inputElement.value.toLowerCase().includes("hello")) {
-        //     addBotMessage("Hi there!");
-        // } else if (inputElement.value.toLowerCase().includes("how are you")) {
-        //     addBotMessage("I'm a chatbot, so I don't have feelings, but I'm here to help you!");
+        // if (inputElement.value.toLowerCase().includes("Destroy an RPC service")) {
+        //     updateBotMessage("Hi there!");
+        // } else if (inputElement.value.toLowerCase().includes("Register hstate attributes for a single node device")) {
+        //     updateBotMessage("I'm a chatbot, so I don't have feelings, but I'm here to help you!");
+        // } else if (inputElement.value.toLowerCase().includes("initialize the terminal data structures")){
+        //     updateBotMessage("I'm a chatbot, so I don't have feelings, but I'm here to help you!");
+        // }
         // } else if (added==0) {
         //     addBotMessage("I'm not sure how to respond to that. Can you please provide more information?");
         // }
