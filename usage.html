@@ -16,7 +16,7 @@
             <ul>
                 <li class="nav-logo"><a href="/">Binary Code Summarization</a></li>
                 <li><a href="/about"><i class="fas fa-info-circle"></i> CP-BCS</a></li>
-                <li><a href="/usage"><i class="fas fa-code"></i> Visit CP-BCS</a></li>
+                <li><a href="/usage"><i class="fas fa-code"></i> Explore CP-BCS</a></li>
                 <!-- <li><a href="contact.html"><i class="fas fa-envelope"></i> 联系我们</a></li> -->
             </ul>
         </div>
@@ -53,21 +53,21 @@
             </div>
 
             <div id="example-section">
-                <h3>Instructions & Example</h3>
+                <h3 style="font-size: 30px;">Instructions</h3>
                 <div id="usage-instructions">
-                    <ul>
-                        <li>Select the system architecture & optimization level</li>
-                        <li>Input the binary code.</li>
-                        <li>Click the "Summary" button.</li>
-                        <li>To clear the contents, click the "Clear" button.</li>
-                    </ul>
+                    <ol>
+                        <li>Select the system architecture & optimization level<br></li>
+                        <li>Input the binary code.<br></li>
+                        <li>Click the "Summary" button.<br></li>
+                        <li>To clear the contents, click the "Clear" button.<br></li>
+                    </ol>
                 </div>
                 
-                <h3>Example</h3>
+                <h3 style="font-size: 30px;">Examples</h3>
                 <div id="example-buttons">                    
-                    <button onclick="sendExample('push rbp\nmov rbp, rsp\npush rbx\nmov eax, [rdi+<POSITIVE>]\nmov rbx, rdi\ntest eax, eax\njz <NEAR>\nsub eax, <POSITIVE>\ntest eax, eax\nmov [rdi+<POSITIVE>], eax\njnz <NEAR>\nlea rdi, [rbx+<POSITIVE>]\ncall <ICALL>\nlea rax, [rbx+<POSITIVE>]\ncmp [rbx+<POSITIVE>], rax\njnz <NEAR>\nlea rax, [rbx+<POSITIVE>]\ncmp [rbx+<POSITIVE>], rax\njnz <NEAR>\nmov rdi, rbx\ncall <ICALL>\ncmp [rbx+<POSITIVE>], <ZERO>\njz <NEAR>\ncall <ICALL>\nmov rdi, [rbx+<POSITIVE>]\ncall <ICALL>\nmov rdi, rbx\ncall <ICALL>\npop rbx\npop rbp\nretn\ncall <ICALL>\npop rbx\npop rbp\nretn\nud2\nud2\nmov rsi, rdi\nxor eax, eax\nmov rdi, <OFFSET> aSvcDestroyNoTh\ncall <ICALL>\njmp <NEAR>')">Destroy an RPC service</button>
-                    <button onclick="sendExample('push rbp\nmov rbp, rsp\npush r14\npush r13\npush r12\npush rbx\nmov eax, [rdi+<POSITIVE>]\nlea rbx, [rax+rax*2]\nshl rbx, <POSITIVE>\nlea r12, [rbx+<NEGATIVE>]\ncmp qword ptr [r12], <ZERO>\njz <NEAR>\npop rbx\npop r12\npop r13\npop r14\npop rbp\nretn\nlea rsi, [rdi+<POSITIVE>]\nmov r13, rdi\nmov rdi, <OFFSET> aHugepages\ncall <ICALL>\ntest rax, rax\nmov rsi, rax\nmov [r12], rax\njz <NEAR>\nmovsxd rax, <MEM> cs:dword_FFFFFFFF81F00C10\nimul rax, , <POSITIVE>\nadd rax, <NEGATIVE>\ncmp rax, <OFFSET> qword_FFFFFFFF820CD160\njbe <NEAR>\nadd rbx, <NEGATIVE>\nmov r14, <OFFSET> qword_FFFFFFFF820CD160\njmp <NEAR>\nmovsxd rax, <MEM> cs:dword_FFFFFFFF81F00C10\nadd r14, <POSITIVE>\nimul rax, , <POSITIVE>\nadd rax, <NEGATIVE>\ncmp r14, rax\njnb <NEAR>\nmov rsi, [r12]\nmov rcx, <OFFSET> qword_FFFFFFFF81E4CBA0\nmov rdx, rbx\nmov rdi, r14\ncall <ICALL>\ntest eax, eax\njz <NEAR>\nmov edx, [r13+<POSITIVE>]\nlea rsi, [r14+<POSITIVE>]\nmov rdi, <OFFSET> unk_FFFFFFFF81BAE968\nxor eax, eax\ncall <ICALL>\nmov rdi, r13\ncall <ICALL>\njmp <NEAR>')">Register hstate attributes for a single node device</button>
-                    <button onclick="sendExample('sub rsp, <POSITIVE>\nmov edx, <POSITIVE>\nmov esi, <OFFSET> qword_624940\nmov edi, <OFFSET> qword_628940\ncall <ICALL>\ncmp eax, <POSITIVE>\njnz <NEAR>\nmov edx, <POSITIVE>\nmov esi, <OFFSET> qword_628980\nmov edi, <OFFSET> qword_62A9A0\ncall <ICALL>\ncmp eax, <POSITIVE>\njnz <NEAR>\ncall <ICALL>\nmov <MEM> cs:dword_61DEA8, eax\nadd rsp, <POSITIVE>\nretn\nmov edi, <POSITIVE>\ncall <ECALL> _exit')">initialize the terminal data structures</button>
+                    <button onclick="sendExample('push rbp\nmov rbp, rsp\npush rbx\nmov eax, [rdi+<POSITIVE>]\nmov rbx, rdi\ntest eax, eax\njz <NEAR>\nsub eax, <POSITIVE>\ntest eax, eax\nmov [rdi+<POSITIVE>], eax\njnz <NEAR>\nlea rdi, [rbx+<POSITIVE>]\ncall <ICALL>\nlea rax, [rbx+<POSITIVE>]\ncmp [rbx+<POSITIVE>], rax\njnz <NEAR>\nlea rax, [rbx+<POSITIVE>]\ncmp [rbx+<POSITIVE>], rax\njnz <NEAR>\nmov rdi, rbx\ncall <ICALL>\ncmp [rbx+<POSITIVE>], <ZERO>\njz <NEAR>\ncall <ICALL>\nmov rdi, [rbx+<POSITIVE>]\ncall <ICALL>\nmov rdi, rbx\ncall <ICALL>\npop rbx\npop rbp\nretn\ncall <ICALL>\npop rbx\npop rbp\nretn\nud2\nud2\nmov rsi, rdi\nxor eax, eax\nmov rdi, <OFFSET> aSvcDestroyNoTh\ncall <ICALL>\njmp <NEAR>')">I. Destroy an RPC service</button>
+                    <button onclick="sendExample('push rbp\nmov rbp, rsp\npush r14\npush r13\npush r12\npush rbx\nmov eax, [rdi+<POSITIVE>]\nlea rbx, [rax+rax*2]\nshl rbx, <POSITIVE>\nlea r12, [rbx+<NEGATIVE>]\ncmp qword ptr [r12], <ZERO>\njz <NEAR>\npop rbx\npop r12\npop r13\npop r14\npop rbp\nretn\nlea rsi, [rdi+<POSITIVE>]\nmov r13, rdi\nmov rdi, <OFFSET> aHugepages\ncall <ICALL>\ntest rax, rax\nmov rsi, rax\nmov [r12], rax\njz <NEAR>\nmovsxd rax, <MEM> cs:dword_FFFFFFFF81F00C10\nimul rax, , <POSITIVE>\nadd rax, <NEGATIVE>\ncmp rax, <OFFSET> qword_FFFFFFFF820CD160\njbe <NEAR>\nadd rbx, <NEGATIVE>\nmov r14, <OFFSET> qword_FFFFFFFF820CD160\njmp <NEAR>\nmovsxd rax, <MEM> cs:dword_FFFFFFFF81F00C10\nadd r14, <POSITIVE>\nimul rax, , <POSITIVE>\nadd rax, <NEGATIVE>\ncmp r14, rax\njnb <NEAR>\nmov rsi, [r12]\nmov rcx, <OFFSET> qword_FFFFFFFF81E4CBA0\nmov rdx, rbx\nmov rdi, r14\ncall <ICALL>\ntest eax, eax\njz <NEAR>\nmov edx, [r13+<POSITIVE>]\nlea rsi, [r14+<POSITIVE>]\nmov rdi, <OFFSET> unk_FFFFFFFF81BAE968\nxor eax, eax\ncall <ICALL>\nmov rdi, r13\ncall <ICALL>\njmp <NEAR>')">II. Register hstate attributes for a single node device</button>
+                    <button onclick="sendExample('sub rsp, <POSITIVE>\nmov edx, <POSITIVE>\nmov esi, <OFFSET> qword_624940\nmov edi, <OFFSET> qword_628940\ncall <ICALL>\ncmp eax, <POSITIVE>\njnz <NEAR>\nmov edx, <POSITIVE>\nmov esi, <OFFSET> qword_628980\nmov edi, <OFFSET> qword_62A9A0\ncall <ICALL>\ncmp eax, <POSITIVE>\njnz <NEAR>\ncall <ICALL>\nmov <MEM> cs:dword_61DEA8, eax\nadd rsp, <POSITIVE>\nretn\nmov edi, <POSITIVE>\ncall <ECALL> _exit')">III. initialize the terminal data structures</button>
                 </div>
             </div>
             
