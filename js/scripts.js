@@ -162,7 +162,12 @@ function sendMessage() {
             setTimeout(function() {
                 updateBotMessage(loadingMsg, "init a terminal data structure");
             }, 1000);
-        } else {
+        } else if (inputElement.value.includes("mov rax, [rdi]\ntest rax, rax\njz short loc_FFFFFFFF81752D04\npush rbp\nmov rbp, rsp\npush rbx\nmov rbx, rdi\nmov rdi, [rax+8]\ntest rdi, rdi\njz short loc_FFFFFFFF81752CE2\nmov rax, [rax]\nmov rax, [rax+48h]\ncall qword ptr [rax+28h]\nmov rax, [rbx]\nmov rdi, [rax]\ncall sub_FFFFFFFF8175287F\nmov rdi, [rbx]\ncall sub_FFFFFFFF8114766E\nmov qword ptr [rbx], 0\nmov eax, 0\npop rbx\npop rbp\nretn")){
+            setTimeout(function() {
+                updateBotMessage(loadingMsg, "free all resources associated with context_handle.");
+            }, 1000);
+        }
+        else {
 
         // Send data to the server and handle the response
         const fetchData = fetch('http://47.96.18.113:5000/app', {
