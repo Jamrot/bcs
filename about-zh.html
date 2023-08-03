@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>二进制代码语义总结</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <main>
+        <div id="navbar">
+            <ul>
+                <li class="nav-logo"><a href="index-zh.html">二进制代码语义总结</a></li>
+                <li><a href="about-zh.html"><i class="fas fa-info-circle"></i> CP-BCS</a></li>
+                <li><a href="usage-zh.html"><i class="fas fa-code"></i> 探索 CP-BCS</a></li>
+                <!-- <li><a href="contact.html"><i class="fas fa-envelope"></i> 联系我们</a></li> -->
+            </ul>
+        </div>
+        <section id="about-content">
+            <div class="content-wrapper">
+                <h1>基于控制流图和伪代码的<br>二进制代码语义总结 (CP-BCS)</h1>
+                <div class="card">
+                    <h2>CP-BCS 二进制代码语义总结示例</h2>
+                    <p>在x86架构下函数名为gss_del_sec_context的二进制代码<br><br></p>
+                    <h3 style="text-align: center;">二进制代码</h3>
+                    <div id='about-img'><img src="images/case.jpg" style="display:inline-block;"></div>
+                    <h3 style="text-align: center;">CP-BCS 语义总结: </h3>
+                    <p style="text-align: center;">free all resources associated with context_handle. （释放与context_handle相关的所有资源。）</p>
+                </div>
+                <div class="card">
+                    <h2>关于 CP-BCS</h2>
+                    <p>自动为二进制生成函数语义总结是一项极其有价值但具有挑战性的任务，因为它涉及将低级语言（汇编代码）的执行行为和语义翻译成人类可读的自然语言。然而，当前大多数理解汇编代码的工作都是面向生成函数名的，其中涉及了大量的缩写，使它们仍然令人困惑。为了弥合这个差距，我们专注于生成二进制函数的完整语义总结，尤其是在没有符号表和调试信息的剥离二进制（现实中的）上。为了充分利用汇编代码的语义，我们提出了一个由控制流图和伪代码引导的二进制代码语义总结框架，称为CP-BCS。CP-BCS利用双向指令级控制流图和伪代码，这些伪代码融合了专家知识，以学习全面的二进制函数执行行为和逻辑语义。我们对3种不同的二进制优化级别（O1，O2和O3）和3种不同的计算机架构（X86，X64和ARM）的CP-BCS进行评估。评估结果表明CP-BCS具有优越性，显著提高了逆向工程的效率。</p>
+                </div>
+                <div class="card">
+                    <h2>CP-BCS 系统整体架构图</h2>
+                    <div id='about-img'><img src="images/architecture.jpg" style="display:inline-block;"></div>
+                </div>
+        </section>
+    </main>
+    <script src="js/scripts.js"></script>
+</body>
+</html>

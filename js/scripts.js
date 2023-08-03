@@ -115,7 +115,8 @@ document.querySelectorAll("#opt-buttons button").forEach(button => {
 });
 
 window.addEventListener('load', () => {
-    addBotMessage("Hello! Please input your binary code.");
+    // addBotMessage("Hello! Please input your binary code.");
+    addBotMessage("请输入您的二进制代码");
 });
 
 function sendMessage() {
@@ -148,7 +149,8 @@ function sendMessage() {
             architecture: architecture
         };
 
-        const loadingMsg = addBotMessage('generating&nbsp&nbsp<span class="dots"><span>.&nbsp</span><span>.&nbsp</span><span>.&nbsp</span></span>')
+        // const loadingMsg = addBotMessage('generating&nbsp&nbsp<span class="dots"><span>.&nbsp</span><span>.&nbsp</span><span>.&nbsp</span></span>')
+        const loadingMsg = addBotMessage('二进制代码语义总结生成中&nbsp&nbsp<span class="dots"><span>.&nbsp</span><span>.&nbsp</span><span>.&nbsp</span></span>')
 
         if (inputElement.value.includes('push rbp\nmov rbp, rsp\npush rbx\nmov eax, [rdi+<POSITIVE>]\nmov rbx, rdi\ntest eax, eax\njz <NEAR>\nsub eax, <POSITIVE>\ntest eax, eax\nmov [rdi+<POSITIVE>], eax\njnz <NEAR>\nlea rdi, [rbx+<POSITIVE>]\ncall <ICALL>\nlea rax, [rbx+<POSITIVE>]\ncmp [rbx+<POSITIVE>], rax\njnz <NEAR>\nlea rax, [rbx+<POSITIVE>]\ncmp [rbx+<POSITIVE>], rax\njnz <NEAR>\nmov rdi, rbx\ncall <ICALL>\ncmp [rbx+<POSITIVE>], <ZERO>\njz <NEAR>\ncall <ICALL>\nmov rdi, [rbx+<POSITIVE>]\ncall <ICALL>\nmov rdi, rbx\ncall <ICALL>\npop rbx\npop rbp\nretn\ncall <ICALL>\npop rbx\npop rbp\nretn\nud2\nud2\nmov rsi, rdi\nxor eax, eax\nmov rdi, <OFFSET> aSvcDestroyNoTh\ncall <ICALL>\njmp <NEAR>')) {
             setTimeout(function() {

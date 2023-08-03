@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>二进制代码语义总结</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <main>
+        <div id="navbar">
+            <ul>
+                <li class="nav-logo"><a href="index-zh.html">二进制代码语义总结</a></li>
+                <li><a href="about-zh.html"><i class="fas fa-info-circle"></i> CP-BCS</a></li>
+                <li><a href="usage-zh.html"><i class="fas fa-code"></i> 探索 CP-BCS</a></li>
+                <!-- <li><a href="contact.html"><i class="fas fa-envelope"></i> 联系我们</a></li> -->
+            </ul>
+        </div>
+        <div id="content-container">
+            <div id="history-section">
+                <h3>历史记录</h3>
+                <div id="history-list">
+                    <button id="new-chat-button">新建</button>
+                </div>
+            </div>
+
+            <div id="chatbot-section">
+                <div id="system-buttons">
+                    <button>ARM_32</button>
+                    <button>X86_32</button>
+                    <button>X86_64</button>
+                    <!-- <button onclick="selectSystem('MIPS')">MIPS</button> -->
+                </div>
+                <div id="opt-buttons">
+                    <button>O1</button>
+                    <button>O2</button>
+                    <button>O3</button>
+                    <!-- <button onclick="selectSystem('MIPS')">MIPS</button> -->
+                </div>
+                <div id="chat-container">
+                    <div id="chat-box"></div>
+                    <div id="chat-input-container">
+                        <textarea id="chat-input" type="text" placeholder="请输入您的信息..."></textarea>
+                        <button id="send-button" onclick="sendMessage()">语义总结</button>
+                        <button id="clear-button" onclick="clearChat()">清空</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="example-section">
+                <h3 style="font-size: 30px;">操作指南</h3>
+                <div id="usage-instructions">
+                    <ol>
+                        <li>选择系统架构和优化级别。<br></li>
+                        <li>输入二进制代码。<br></li>
+                        <li>点击"语义总结"按钮。<br></li>
+                        <li>如果需要清空内容，请点击"清空"按钮。<br></li>
+                    </ol>
+                </div>
+                
+                <h3 style="font-size: 30px;">示例</h3>
+                <div id="example-buttons">                    
+                    <button onclick="sendExample('push rbp\nmov rbp, rsp\npush rbx\nmov eax, [rdi+<POSITIVE>]\nmov rbx, rdi\ntest eax, eax\njz <NEAR>\nsub eax, <POSITIVE>\ntest eax, eax\nmov [rdi+<POSITIVE>], eax\njnz <NEAR>\nlea rdi, [rbx+<POSITIVE>]\ncall <ICALL>\nlea rax, [rbx+<POSITIVE>]\ncmp [rbx+<POSITIVE>], rax\njnz <NEAR>\nlea rax, [rbx+<POSITIVE>]\ncmp [rbx+<POSITIVE>], rax\njnz <NEAR>\nmov rdi, rbx\ncall <ICALL>\ncmp [rbx+<POSITIVE>], <ZERO>\njz <NEAR>\ncall <ICALL>\nmov rdi, [rbx+<POSITIVE>]\ncall <ICALL>\nmov rdi, rbx\ncall <ICALL>\npop rbx\npop rbp\nretn\ncall <ICALL>\npop rbx\npop rbp\nretn\nud2\nud2\nmov rsi, rdi\nxor eax, eax\nmov rdi, <OFFSET> aSvcDestroyNoTh\ncall <ICALL>\njmp <NEAR>')">I. Destroy an RPC service（销毁RPC服务）</button>
+                    <button onclick="sendExample('push rbp\nmov rbp, rsp\npush r14\npush r13\npush r12\npush rbx\nmov eax, [rdi+<POSITIVE>]\nlea rbx, [rax+rax*2]\nshl rbx, <POSITIVE>\nlea r12, [rbx+<NEGATIVE>]\ncmp qword ptr [r12], <ZERO>\njz <NEAR>\npop rbx\npop r12\npop r13\npop r14\npop rbp\nretn\nlea rsi, [rdi+<POSITIVE>]\nmov r13, rdi\nmov rdi, <OFFSET> aHugepages\ncall <ICALL>\ntest rax, rax\nmov rsi, rax\nmov [r12], rax\njz <NEAR>\nmovsxd rax, <MEM> cs:dword_FFFFFFFF81F00C10\nimul rax, , <POSITIVE>\nadd rax, <NEGATIVE>\ncmp rax, <OFFSET> qword_FFFFFFFF820CD160\njbe <NEAR>\nadd rbx, <NEGATIVE>\nmov r14, <OFFSET> qword_FFFFFFFF820CD160\njmp <NEAR>\nmovsxd rax, <MEM> cs:dword_FFFFFFFF81F00C10\nadd r14, <POSITIVE>\nimul rax, , <POSITIVE>\nadd rax, <NEGATIVE>\ncmp r14, rax\njnb <NEAR>\nmov rsi, [r12]\nmov rcx, <OFFSET> qword_FFFFFFFF81E4CBA0\nmov rdx, rbx\nmov rdi, r14\ncall <ICALL>\ntest eax, eax\njz <NEAR>\nmov edx, [r13+<POSITIVE>]\nlea rsi, [r14+<POSITIVE>]\nmov rdi, <OFFSET> unk_FFFFFFFF81BAE968\nxor eax, eax\ncall <ICALL>\nmov rdi, r13\ncall <ICALL>\njmp <NEAR>')">II. Register hstate attributes for a single node device（为单节点设备注册hstate属性）</button>
+                    <button onclick="sendExample('sub rsp, <POSITIVE>\nmov edx, <POSITIVE>\nmov esi, <OFFSET> qword_624940\nmov edi, <OFFSET> qword_628940\ncall <ICALL>\ncmp eax, <POSITIVE>\njnz <NEAR>\nmov edx, <POSITIVE>\nmov esi, <OFFSET> qword_628980\nmov edi, <OFFSET> qword_62A9A0\ncall <ICALL>\ncmp eax, <POSITIVE>\njnz <NEAR>\ncall <ICALL>\nmov <MEM> cs:dword_61DEA8, eax\nadd rsp, <POSITIVE>\nretn\nmov edi, <POSITIVE>\ncall <ECALL> _exit')">III. initialize the terminal data structures （初始化终端数据结构）</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>
